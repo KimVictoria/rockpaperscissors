@@ -9,17 +9,32 @@
 
 // DOCUMENT READY FUNCTION BELOW
 
-$("#shoot").click(function() {
-    let ____ = $("").val;
-    $("#userChoice").text(____);
+$("button").click(function() {
+    var userinput = $("input").val();
+    $("#userChoice").text(userinput);
 
+    var randomthing = Math.random();
+
+    var computerinput = $("#computerChoice").val();
+
+    if (randomthing < 0.33) {
+        $("#computerChoice").text("rock");
+    } else if ((randomthing > 0.33) && (randomthing < 0.67)) {
+        $("#computerChoice").text("paper");
+    } else {
+        $("#computerChoice").text("scissors");
+    }
+
+    if ((userinput === "rock") && (randomthing < 0.33)) {
+        $("#result").text("It's a tie!");
+
+    } else if ((userinput === "rock") && (randomthing < 0.67) && (randomthing > 0.33))
+        $("#result").text("You lose!");
+
+    if ((userinput === "rock") && (randomthing > 0.67))
+        $("#result").text("You win!");
+        
 });
 
-let r = math.random()
-    if (r<0.333) {
-        let computerchoice= "rock";
-    } else if (r<0.67) {
-        let computerchoice= "paper";
-    } else
-        let computerchoice= "scissors";
+
 
